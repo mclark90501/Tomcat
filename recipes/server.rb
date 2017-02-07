@@ -18,4 +18,5 @@ end
 
 service 'tomcat' do
   action [ :enable, :start ]
+  only_if do File.exist?('/usr/share/tomcat/webapps/ROOT/index.jsp') end
 end
